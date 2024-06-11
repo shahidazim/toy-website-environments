@@ -99,3 +99,8 @@ jobs:
           -CI
       name: Run smoke tests
       shell: pwsh
+    - name: Check object
+      run: |
+        cat << OBJECT
+        ${{ toJson(github) }}
+        OBJECT
