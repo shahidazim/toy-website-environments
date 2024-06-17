@@ -1,5 +1,4 @@
-name: deploy-toy-website-test-environment
-concurrency: toy-company
+name: deploy-toy-website-prod-environment
 
 on:
   push:

@@ -1,5 +1,4 @@
 name: deploy-toy-website-dumb-environment
-concurrency: toy-company
 
 on:
   push:
