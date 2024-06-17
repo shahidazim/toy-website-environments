@@ -1,7 +1,7 @@
 @description('The location into which your Azure resources should be deployed.')
 param location string = resourceGroup().location
 
-@description('Select the type of environment you want to provision. Allowed values are Production and Test.')
+@description('Select the type of environment you want to provision. Allowed values are Production, Test and Dumb.')
 @allowed([
   'Production'
   'Test'
@@ -43,6 +43,18 @@ var environmentConfigurationMap = {
     }
   }
   Test: {
+    appServicePlan: {
+      sku: {
+        name: 'F1'
+      }
+    }
+    storageAccount: {
+      sku: {
+        name: 'Standard_LRS'
+      }
+    }
+  }
+  Dumb: {
     appServicePlan: {
       sku: {
         name: 'F1'
